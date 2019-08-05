@@ -57,12 +57,10 @@ var position = 0;
 $(document).ready(function() {
 
   $('#previous').hide();
-  // Show the user the start screen to begin with
   document.getElementById('start-container').style.display = 'block';
   document.getElementById('quiz-container').style.display = 'none';
   document.getElementById('score-container').style.display = 'none';
 
-  // When the user clicks the start button show the first question
   $("#start, #restart").click(function() {
     position = 0;
     correct = 0;
@@ -99,8 +97,6 @@ $(document).ready(function() {
     event.stopPropagation();
   });
 
-
-  // Function that creates the HTML for the question in the current position
   function showQuestion() {
     if (position == 5) {
       $("#btnsubmit").css("display", "inline-block");
@@ -137,7 +133,6 @@ $(document).ready(function() {
     }
   }
 
-  // Function that checks to see if the answer is correct
   function checkAnswer(clickedValue) {
     selected.push(clickedValue);
     var correctAnswer = questionSet[position].choices[questionSet[position].correctAnswer];
